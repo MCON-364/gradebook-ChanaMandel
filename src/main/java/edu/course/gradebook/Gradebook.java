@@ -29,8 +29,8 @@ public class Gradebook {
         }
 
         grades.add(grade);
-        int gradeIndex = grades.size() - 1;
-        undoStack.push((gradebook) -> grades.remove(gradeIndex));
+        final int indexToRemove = grades.size() - 1;
+        undoStack.push((gradebook) -> grades.remove(indexToRemove));
         activityLog.add("Added grade " + grade + " for " + name);
         return true;
     }
